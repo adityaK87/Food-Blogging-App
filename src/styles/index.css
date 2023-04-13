@@ -238,11 +238,12 @@
     flex-direction:column ;
     align-items: center;
     justify-content: space-evenly;
+    margin: 10px 20px;
 }
 
-.card:nth-child(2){
+/* .card:nth-child(2){
     margin: 0px 42px;
-}
+} */
 
 .articles-section{
     display: flex;
@@ -304,7 +305,6 @@
 .card-btn{   
     background: transparent;
     box-sizing: border-box;
-    /* Auto layout */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -315,13 +315,13 @@
     height: 42px;
     border: 1px solid #424961;
     border-radius: 21px;
-    /* Inside auto layout */
     flex: none;
     order: 1;
     flex-grow: 0;
     align-self: flex-start;
-    margin-left: 38px;
+    margin-left: 28px;
 }
+
 .card-btn > p{
     width: 79px;
     height: 36px;
@@ -339,6 +339,7 @@
 .cards-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 
@@ -359,7 +360,6 @@
     font-weight: 400;
     font-size: 22px;
     line-height: 27px;
-    /* identical to box height, or 124% */
     color: #424961;
     margin: 0px 23px;
 }
@@ -371,6 +371,10 @@
     border-radius: 5px;
     display: grid;
     place-items: center;
+    background: transparent;
+}
+.pagination-prev-forward-btn:hover{
+    cursor: pointer;
 }
 /* footer Styling */
 
@@ -397,12 +401,7 @@
     font-weight: 600;
     font-size: 18.8433px;
     line-height: 27px;
-    /* or 144% */
-
-    letter-spacing: 0.03em;
-
-    /* primary */
-
+     letter-spacing: 0.03em;
     color: #0E2368;
     margin-bottom: 15px;
 
@@ -521,11 +520,11 @@ button:hover{
     .cards-container{
         justify-content: center;
     }
-    .card:nth-child(1),
+    /* .card:nth-child(1),
     .card:nth-child(2),
     .card:nth-child(3){
         margin: 10px 10px;
-    }
+    } */
     
 }
 @media only screen and (max-width:793px) and (min-width:540px) {
@@ -706,9 +705,9 @@ button:hover{
     }
 
     /* Cards Css */
-    .card:nth-child(2){
+    /* .card:nth-child(2){
         margin: 30px ;
-    }
+    } */
     .card{
         margin: 31px 0px;
         box-sizing: border-box;
@@ -798,8 +797,8 @@ button:hover{
         height: 25px;
         font-size: 8.76168px;
         line-height: 12px;
-        /* or 140% */
     }
+
     .social-heading{
         display: none;
     }

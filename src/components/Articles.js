@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "./Card";
 import "../styles/index.css";
 import grilledTomatoes from "../assets/grilled-tomatoes.png";
@@ -11,42 +11,68 @@ import prevpage from "../assets/prevpage.png";
 import forwardpage from "../assets/forwardpage.png";
 
 const Articles = () => {
+	const [page, setPage] = useState(1);
+	let totalPage = 2;
+	const handleOnNextPage = () => {
+		setPage(2);
+	};
+	const handleOnPrevBtn = () => {
+		setPage(1);
+	};
 	return (
 		<div className='articles-section'>
 			<h1 className='article-heading'>Latest Articles</h1>
+			{page === 1 ? (
+				<article className='cards-container'>
+					<Card
+						cardImage={grilledTomatoes}
+						cardName='Grilled Tomatoes at Home'
+					/>
+					<Card
+						cardImage={fruitsMealPrep}
+						cardName='Snacks for Travel'
+					/>
+					<Card
+						cardImage={postWorkoutMeal}
+						cardName='Post-workout Recipes'
+					/>
+				</article>
+			) : (
+				<article className='cards-container'>
+					<Card
+						cardImage={grilledCorn}
+						cardName='How To Grill Corn'
+					/>
+					<Card
+						cardImage={crunchWrapSupreme}
+						cardName='Crunchwrap Supreme'
+					/>
+					<Card
+						cardImage={broccoliCheeseSoup}
+						cardName='Broccoli Cheese Soup'
+					/>
+				</article>
+			)}
 
-			<article className='cards-container'>
-				<Card
-					cardImage={grilledTomatoes}
-					cardName='Grilled Tomatoes at Home'
-				/>
-				<Card cardImage={fruitsMealPrep} cardName='Snacks for Travel' />
-				<Card
-					cardImage={postWorkoutMeal}
-					cardName='Post-workout Recipes'
-				/>
-				{/* <Card cardImage={grilledCorn} cardName='How To Grill Corn' />
-				<Card
-					cardImage={crunchWrapSupreme}
-					cardName='Crunchwrap Supreme'
-				/>
-				<Card
-					cardImage={broccoliCheeseSoup}
-					cardName='Broccoli Cheese Soup'
-				/> */}
-			</article>
 			<div className='pagination'>
-				<span className='pagination-prev-forward-btn'>
-					<img src={prevpage} alt='' className='prev-forward-img' />
-				</span>
-				<p>1/2</p>
-				<span className='pagination-prev-forward-btn'>
+				<button className='pagination-prev-forward-btn'>
+					<img
+						src={prevpage}
+						alt=''
+						className='prev-forward-img'
+						onClick={handleOnPrevBtn}
+					/>
+				</button>
+				<p>{page + "/" + totalPage}</p>
+				<button
+					className='pagination-prev-forward-btn'
+					onClick={handleOnNextPage}>
 					<img
 						src={forwardpage}
 						alt=''
 						className='prev-forward-img'
 					/>
-				</span>
+				</button>
 			</div>
 		</div>
 	);

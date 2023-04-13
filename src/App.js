@@ -1,9 +1,10 @@
 import React from "react";
+import LandingPage from "./components/LandingPage";
 
 function App() {
 	return (
 		<React.Fragment>
-			<h1>Namaste Bharat!</h1>
+			<LandingPage />
 		</React.Fragment>
 	);
 }

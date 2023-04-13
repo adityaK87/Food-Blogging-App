@@ -17,9 +17,7 @@ const About = () => {
 						scrambled it to make a type specimen book. t has
 						survived not only five centuries.
 					</p>
-					<button className='about-read-more-btn'>
-						<p>Read More</p>
-					</button>
+					<button className='about-read-more-btn'>Read More</button>
 				</div>
 			</div>
 		</div>

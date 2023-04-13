@@ -7,8 +7,10 @@ import postWorkoutMeal from "../assets/post-workout-meal-prep.png";
 import grilledCorn from "../assets/grilled-corn.png";
 import crunchWrapSupreme from "../assets/crunch-wrap-supreme.png";
 import broccoliCheeseSoup from "../assets/broccoli-cheese-soup.png";
-import prevpage from "../assets/prevpage.png";
-import forwardpage from "../assets/forwardpage.png";
+import disabledPrev from "../assets/disabledPrev.png";
+import enabledPrev from "../assets/enabledPrev.png";
+import enabledForward from "../assets/enabledforward.png";
+import disabledForward from "../assets/disabledForward.png";
 
 const Articles = () => {
 	const [page, setPage] = useState(1);
@@ -57,7 +59,7 @@ const Articles = () => {
 			<div className='pagination'>
 				<button className='pagination-prev-forward-btn'>
 					<img
-						src={prevpage}
+						src={page === 1 ? disabledPrev : enabledPrev}
 						alt=''
 						className='prev-forward-img'
 						onClick={handleOnPrevBtn}
@@ -68,7 +70,7 @@ const Articles = () => {
 					className='pagination-prev-forward-btn'
 					onClick={handleOnNextPage}>
 					<img
-						src={forwardpage}
+						src={page === 1 ? enabledForward : disabledForward}
 						alt=''
 						className='prev-forward-img'
 					/>
